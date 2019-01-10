@@ -32,7 +32,20 @@
         </encoder>
     </appender>
 
+    <appender name="REDIS" class="net.logstash.logback.appender.LoggingEventAsyncDisruptorAppender">
+        <appender class="de.idealo.logback.appender.RedisBatchAppender">
+            <connectionConfig>
+                <scheme>NODE</scheme>
+                <host>localhost</host>
+                <port>6379</port>
+                <key>logstash</key>
+            </connectionConfig>
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        </appender>
+    </appender>
+
     <root additivity="false" level="INFO">
+        <appender-ref ref="REDIS"/>
         <appender-ref ref="LOGSTASH_FILE"/>
         <appender-ref ref="NORMAL_FILE"/>
         <appender-ref ref="CONSOLE"/>
