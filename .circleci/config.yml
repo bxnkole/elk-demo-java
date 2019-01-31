@@ -40,5 +40,5 @@ jobs:
       # run tests!
       - run: mvn package
 
-      - store_artifacts
-          path: /repo/target
+      - store_artifacts:
+          path: ~/repo/target
