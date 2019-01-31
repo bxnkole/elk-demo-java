@@ -43,10 +43,10 @@ jobs:
 
 workflows:
   version: 2
-    jobs:
-    - build:
-        filters:
-          branches:
-            only:
-            - master
-            - develop
+  jobs:
+  - build:
+      filters:
+        branches:
+          only:
+          - master
+          - develop
