@@ -44,8 +44,9 @@ jobs:
 workflows:
   version: 2
     jobs:
-      filters:
-        branches:
-          only:
-          - master
-          - develop
+      build:
+        filters:
+          branches:
+            only:
+            - master
+            - develop
