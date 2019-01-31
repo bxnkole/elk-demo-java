@@ -40,3 +40,15 @@ jobs:
 
       - store_artifacts:
           path: target/elk-demo-2-0.0.1-SNAPSHOT.jar
+
+workflows:
+  version: 2
+  nightly:
+    triggers:
+      - schedule:
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build
