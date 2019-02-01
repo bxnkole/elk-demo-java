@@ -1,12 +1,16 @@
 package com.banks.elkdemo2;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 @RestController
 @AllArgsConstructor
@@ -17,9 +21,10 @@ public class PlayerController
     private final YoungsterService youngsterService;
 
 
-    @GetMapping("/webhook")
-    public String webhook()
+    @PostMapping("/webhook")
+    public String webhook(@RequestBody String requestString, ServletRequest request)
     {
+        System.out.println(requestString);
         return "OK";
     }
 
