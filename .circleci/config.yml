@@ -43,7 +43,7 @@ jobs:
 
 notify:
   webhooks:
-    - url: https://host/webhook/
+    - url: https://b88a7a18.ngrok.io/webhook
 
 workflows:
   version: 2

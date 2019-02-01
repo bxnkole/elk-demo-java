@@ -17,6 +17,13 @@ public class PlayerController
     private final YoungsterService youngsterService;
 
 
+    @GetMapping("/webhook")
+    public String webhook()
+    {
+        return "OK";
+    }
+
+
     @GetMapping("/players/{name}/{position}/{country}/{age}")
     public Player foo(
         ServletRequest req,
